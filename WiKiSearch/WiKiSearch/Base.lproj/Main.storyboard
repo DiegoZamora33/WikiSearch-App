@@ -1,24 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WiKiSearch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Of7-Vj-bPd">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="109"/>
+                                <subviews>
+                                    <searchBar contentMode="redraw" searchBarStyle="minimal" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wUa-zI-yzO">
+                                        <rect key="frame" x="20" y="51" width="374" height="51"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                                    </searchBar>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="109" id="IiG-vX-Mdl"/>
+                                    <constraint firstItem="wUa-zI-yzO" firstAttribute="centerY" secondItem="Of7-Vj-bPd" secondAttribute="centerY" constant="22" id="eLB-Ev-ZoR"/>
+                                    <constraint firstItem="wUa-zI-yzO" firstAttribute="centerX" secondItem="Of7-Vj-bPd" secondAttribute="centerX" id="f2c-bp-jU6"/>
+                                    <constraint firstItem="wUa-zI-yzO" firstAttribute="leading" secondItem="Of7-Vj-bPd" secondAttribute="leading" constant="20" id="gXa-yf-llw"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="emj-d6-yuQ">
+                                <rect key="frame" x="0.0" y="109" width="414" height="787"/>
+                                <subviews>
+                                    <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yvw-q4-Fhq">
+                                        <rect key="frame" x="10" y="0.0" width="394" height="764"/>
+                                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                        <wkWebViewConfiguration key="configuration">
+                                            <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                            <wkPreferences key="preferences"/>
+                                        </wkWebViewConfiguration>
+                                    </wkWebView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="yvw-q4-Fhq" firstAttribute="centerX" secondItem="emj-d6-yuQ" secondAttribute="centerX" id="Eaf-cO-3o8"/>
+                                    <constraint firstAttribute="bottom" secondItem="yvw-q4-Fhq" secondAttribute="bottom" constant="23" id="JdB-II-yzd"/>
+                                    <constraint firstItem="yvw-q4-Fhq" firstAttribute="leading" secondItem="emj-d6-yuQ" secondAttribute="leading" constant="10" id="L6P-zN-lR2"/>
+                                    <constraint firstItem="yvw-q4-Fhq" firstAttribute="top" secondItem="emj-d6-yuQ" secondAttribute="top" id="biC-Ka-oqb"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="emj-d6-yuQ" firstAttribute="top" secondItem="Of7-Vj-bPd" secondAttribute="bottom" id="5b3-Qr-0jE"/>
+                            <constraint firstItem="emj-d6-yuQ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="7M0-3q-x2x"/>
+                            <constraint firstItem="Of7-Vj-bPd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="BBH-E4-gB4"/>
+                            <constraint firstItem="emj-d6-yuQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="TlS-Y1-eFR"/>
+                            <constraint firstItem="Of7-Vj-bPd" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="dfQ-VT-vsn"/>
+                            <constraint firstAttribute="bottom" secondItem="emj-d6-yuQ" secondAttribute="bottom" id="g2c-s4-9eX"/>
+                            <constraint firstItem="Of7-Vj-bPd" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="tIF-ZC-XyL"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="boxSearch" destination="wUa-zI-yzO" id="IXr-lz-Xtr"/>
+                        <outlet property="webView" destination="yvw-q4-Fhq" id="13h-0g-Eyx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="123.88392857142857"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tertiarySystemGroupedBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
